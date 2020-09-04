@@ -22,7 +22,7 @@ function Header() {
                     src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512">
                 </img>
                 <div className="header__input">
-                    <SearchIcon fontsize="large"/>
+                    <SearchIcon fontSize="large"/>
                     <input type="text" placeholder="Search Faceclone"/>
                 </div>
             </div>
