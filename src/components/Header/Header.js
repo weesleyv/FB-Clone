@@ -1,5 +1,6 @@
 import React from 'react'
 import './styles/Header.scss'
+import {useStateValue} from '../../StateProvider';
 
 import SearchIcon from '@material-ui/icons/Search';
 import HomeIcon from '@material-ui/icons/Home';
@@ -11,9 +12,11 @@ import AddIcon from '@material-ui/icons/Add';
 import ForumIcon from '@material-ui/icons/Forum';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { Avatar, IconButton } from '@material-ui/core'
+import { Avatar, IconButton } from '@material-ui/core';
+
 
 function Header() {
+    const [{user}, dispatch] = useStateValue()
     return (
         <div className="header">
             <div className="header__left">
@@ -47,8 +50,8 @@ function Header() {
 
             <div className="header__right">
                 <div className="header__info">
-                    <Avatar />
-                    <h4>Someone Name</h4>
+                    <Avatar src={user.photoUrl}/>
+                    <h4>{user.displayName}</h4>
 
                     <IconButton>
                         <AddIcon/>

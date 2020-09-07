@@ -10,12 +10,13 @@ import ChatIcon from '@material-ui/icons/Chat';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import { ExpandMoreOutlined } from '@material-ui/icons';
+import {useStateValue} from '../../StateProvider';
 
 function Sidebar() {
+    const [{user}, dispatch] = useStateValue()
     return (
         <div className="sidebar">
-            <SidebarRow 
-                src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/prince-louis-birthday-photo-1587591347.jpg?crop=1xw:1xh;center,top&resize=480:*" title="Someone Name" />
+            <SidebarRow src={user.photoUrl} title={user.displayName} />
             <SidebarRow Icon={LocalHospitalIcon} title="COVID-19 information center" />
             <SidebarRow Icon={EmojiFlagsIcon} title="Pages" />
             <SidebarRow Icon={PeopleIcon} title="Friends" />
